@@ -1,7 +1,11 @@
 FactoryBot.define do
   factory :user do
-    name { 'name' }
-    email { 'email' }
+    sequence :name do |n|
+      "name#{n}"
+    end
+    sequence :email do |n|
+      "email#{n}@domain.com"
+    end
     credits_amount { 300 }
   end
 end

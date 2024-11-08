@@ -1,6 +1,8 @@
 FactoryBot.define do
   factory :reward do
-    name { 'some reward' }
+    sequence(:name) do |n|
+      "name#{n}"
+    end
     cost { 100 }
     available { true }
     inventory_amount { 3 }

@@ -31,6 +31,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_08_002850) do
     t.integer "inventory_amount", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["available"], name: "index_rewards_on_available"
     t.index ["name"], name: "index_rewards_on_name", unique: true
   end
 

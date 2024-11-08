@@ -3,7 +3,7 @@ class Reward < ApplicationRecord
   has_many :users, through: :redemptions
 
   validates :name, presence: true, uniqueness: true
-  validates :cost, numericality: { greater_than_or_equal: 0 } # NOTE: this fiedld is specified by cents
+  validates :cost, numericality: { greater_than_or_equal: 0 } # NOTE: this field is specified by cents
   validates :inventory_amount, numericality: { greater_than_or_equal: 0 }
   validates :available, inclusion: [true, false]
 

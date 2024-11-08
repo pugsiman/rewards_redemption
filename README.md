@@ -1,24 +1,6 @@
-# README
+# Description
+Simple API for user rewards redemption.
+# ERD
+<img width="601" alt="image" src="https://github.com/user-attachments/assets/f4c7b920-5242-47f3-9d90-e4abf176d816">
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# How to run

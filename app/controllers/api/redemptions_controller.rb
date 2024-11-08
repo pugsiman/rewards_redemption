@@ -4,10 +4,11 @@ class Api::RedemptionsController < ApplicationController
   end
 
   def create
-    if reward.available && user.credits_amount >= reward.cost
-      ActiveRecord::Base.transaction do
+    if reward.available && reward.inventory_amount.positive? && user.credits_amount >= reward.cost
+      ActiveRecord::Base.transaction do # rollback all transactions in case one fails
         user.update!(credits_amount: user.credits_amount - reward.cost)
         redemption = user.redemptions.create!(reward: reward, paid_amount: reward.cost)
+        reward.decrement(:inventory_amount).save!
 
         render json: redemption, status: :created
       end

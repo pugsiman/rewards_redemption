@@ -4,4 +4,5 @@ class User < ApplicationRecord
 
   validates :email, presence: true, uniqueness: true
   validates :name, presence: true
+  validates :credits_amount, numericality: { greater_than_or_equal: 0 }
 end
